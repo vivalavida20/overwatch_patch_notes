@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>오버워치 패치노트</title>
+	<meta charset="utf-8">
+</head>
+<body>
+{% for patch_note in patch_notes %}
+	<h1>{{ patch_note.title }}</h1>
+	<p>{{ patch_note.subject }}</p>
+	<p>{{ patch_note.text }}</p>
+	<p>{{ patch_note.patch_date }}</p>
+{% endfor %}
+</body>
+</html>
