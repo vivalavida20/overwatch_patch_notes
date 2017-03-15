@@ -1,7 +1,8 @@
+# -*- coding : utf-8 -*-
 from datetime import datetime
 from overwatch_crawler import get_patch_notes
 import sys
-# python timezone library인 것으로 아는데 무슨 소용인지는 모름
+
 import pytz
 import os
 import django 
@@ -13,7 +14,7 @@ from patch_app.models import PatchNotes
 
 patch_notes_list = get_patch_notes()
 
-#패치 노트의 내용을 db에 저장 
+
 
 def find_objects():
 	objects_all = list(PatchNotes.objects.all())
