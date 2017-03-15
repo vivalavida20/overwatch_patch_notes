@@ -95,10 +95,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
-
-출처: http://dgkim5360.tistory.com/entry/deploy-django-project-on-heroku [개발새발로그]
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
