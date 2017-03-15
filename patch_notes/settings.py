@@ -26,7 +26,7 @@ SECRET_KEY = 'e+-xl+wnzy#k9i&o-sldw$)ke&%7*pyj(rm2nwc4lv55u2q4oe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'frozen-ravine-55519.herokuapp.com']
 
 
 # Application definition
