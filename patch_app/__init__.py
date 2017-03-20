@@ -1,0 +1,1 @@
+default_app_config = 'patch_app.apps.PatchAppConfig'
