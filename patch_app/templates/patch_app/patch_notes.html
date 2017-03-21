@@ -13,5 +13,11 @@
 	<p>{{ patch_note.text }}</p>
 	<p>{{ patch_note.patch_date }}</p>
 {% endfor %}
+
+{% for test_patch_note in test_patch_notes %}
+	<h1>{{ test_patch_note.title }} {{ test_patch_note.patch_date }}</h1>
+	<p>{{ test_patch_note.subject }}</p>
+	<p>{{ test_patch_note.text }}</p>
+{% endfor %}
 </body>
 </html>
