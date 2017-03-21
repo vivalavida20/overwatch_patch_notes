@@ -6,13 +6,13 @@ import sys
 import pytz
 import os
 import django 
-from django.conf import settings
+# from django.conf import settings
 
-settings.configure(DEBUG=True)
+# settings.configure(DEBUG=True)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "patch_notes.settings")
 django.setup()
 
-from .models import PatchNotes, TestPatchNotes
+from patch_app.models import PatchNotes, TestPatchNotes
 
 patch_notes_list = get_patch_notes()
 test_patch_notes = get_test_patch_notes()
@@ -34,22 +34,22 @@ find_objects = find_objects()
 		
 
 # 정식 패치노트 DB 저장
-# if find_objects == [] or find_objects != patch_notes_list[0][0]:
-# 	for patch in patch_notes_list:
-# 		PatchNotes(title=patch[0], subject=patch[1], text=patch[2] + patch[3], patch_date=patch_date).save()
-# 		print("Successfully saved.")
+if find_objects == [] or find_objects != patch_notes_list[0][0]:
+	for patch in patch_notes_list:
+		PatchNotes(title=patch[0], subject=patch[1], text=patch[2] + patch[3], patch_date=patch_date).save()
+		print("Successfully saved.")
 
-# else:
-# 	print("There's nothing to update.")	
+else:
+	print("There's nothing to update.")	
 
 
 # 테스트 서버 패치노트 DB 저장 
-if test_patch_notes != []:
+if test_patch_notes == []:
 	for test_patch in test_patch_notes:
 		TestPatchNotes(title=test_patch[0], subject=test_patch[1], text=test_patch[3], patch_date=patch_date).save()
 		print("Successfully saved")
-elif test_patch_notes == []:
-	print("there's nothing to save.")
+elif test_patch_notes != []:
+	print("There's nothing to save.")
 
 # 현재 내 testpatchnotes 테이블의 리스트 중 가장 최근의 리스트를 가져옴
 # (날짜별이 아니고, 그냥 첫번째 걸로 가져오는 것이기 때문에 날짜 별로 걸러내는 방법이 필요)
