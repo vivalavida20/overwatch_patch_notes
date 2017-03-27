@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 def get_patch_notes():
 
 	
-	response = requests.get('https://playoverwatch.com/ko-kr/game/patch-notes/pc/')
+    response = requests.get('https://playoverwatch.com/ko-kr/game/patch-notes/pc/')
 
 	html = response.text
 	soup = BeautifulSoup(html, 'html.parser')
@@ -45,7 +45,7 @@ def visible(element):
 
 def get_test_patch_notes():
 
-	response = requests.get('https://playoverwatch.com/ko-kr/blog/')
+    response = requests.get('https://playoverwatch.com/ko-kr/blog/')
 
 	html = response.text
 	soup = BeautifulSoup(html, 'html.parser')
@@ -78,6 +78,7 @@ def get_test_patch_notes():
 		test_patch_notes_list.append(ts_list)
 
 	return test_patch_notes_list
+	print("Test patch notes Returned")
 
 
 	
