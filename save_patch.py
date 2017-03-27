@@ -44,19 +44,25 @@ else:
 
 
 # 테스트 서버 패치노트 DB 저장 
-if test_patch_notes == []:
-	for test_patch in test_patch_notes:
-		TestPatchNotes(title=test_patch[0], subject=test_patch[1], text=test_patch[3], patch_date=patch_date).save()
-	print("Test patch Notes : Successfully saved")
-elif test_patch_notes != []:
-	print("Test patch Notes : There's nothing to save.")
+# if test_patch_notes == []:
+# 	for test_patch in test_patch_notes:
+# 		TestPatchNotes(title=test_patch[0], subject=test_patch[1], text=test_patch[3], patch_date=patch_date).save()
+# 	print("Test patch Notes : Successfully saved")
+# elif test_patch_notes != []:
+# 	print("Test patch Notes : There's nothing to save.")
+
+for test_patch in test_patch_notes:
+    TestPatchNotes(title=test_patch[0], subject=test_patch[1], text=test_patch[3], patch_date=patch_date).save()
+print("Test patch Notes : Successfully saved")
 
 # 현재 내 testpatchnotes 테이블의 리스트 중 가장 최근의 리스트를 가져옴
 # (날짜별이 아니고, 그냥 첫번째 걸로 가져오는 것이기 때문에 날짜 별로 걸러내는 방법이 필요)
 def find_test_objects():
-	objects_all = list(TestPatchNotes.objects.all())
+    objects_all = list(TestPatchNotes.objects.all())
 
-	print(objects_all[0])
+    print(objects_all[0])
+
+find_test_objects()
 
 
 
