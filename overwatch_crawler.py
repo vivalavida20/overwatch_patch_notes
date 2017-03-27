@@ -52,9 +52,9 @@ def get_test_patch_notes():
     test_server_list = []
 
     for text in test_server_texts:
-        if "오버워치 공개 테스트 서버 오픈" in text.text:
+        if "테스트 서버" in text.text:
             test_server_list.append('https://playoverwatch.com' + text['href'])
-        print('https://playoverwatch.com' + text['href'])
+        print(test_server_list)
 
     test_patch_notes_list = []
     # print(test_server_list)
