@@ -10,9 +10,9 @@ sched = BlockingScheduler()
 
 
 
-@sched.scheduled_job('cron', day_of_week='mon-sun', hour=24)
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour=17)
 def scheduled_job():
     save_patches()
-    print('This job is run every weekday at 0am.')
+    print('This job is run every weekday at 5pm.')
 
 sched.start()
