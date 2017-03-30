@@ -8,7 +8,7 @@ sched = BlockingScheduler()
 #     save_patches()
 #     print('This job is run every three minutes.')
 
-s
+
 
 @sched.scheduled_job('cron', day_of_week='mon-sun', hour=24)
 def scheduled_job():
