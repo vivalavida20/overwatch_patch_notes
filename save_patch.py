@@ -30,7 +30,7 @@ def find_objects():
 	else:	
 		return objects_all
 
-find_objects = find_objects()
+
 
 # def find_test_objects():
 #     objects_all = list(TestPatchNotes.objects.all())
@@ -40,6 +40,7 @@ find_objects = find_objects()
 # find_test_objects()
 
 def save_patches():
+    find_objects = find_objects()
     # 정식 패치노트 DB 저장
     if find_objects == [] or find_objects != patch_notes_list[0][0]:
         for patch in patch_notes_list:
