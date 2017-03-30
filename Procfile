@@ -1,1 +1,1 @@
-web: gunicorn patch_notes.wsgi --log-file -
+clock: python3 save_patch.py
